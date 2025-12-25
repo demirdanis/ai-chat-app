@@ -24,7 +24,7 @@ const ChatLayout = async ({ children }: ChatLayoutProps) => {
           email={email}
           fullName={fullName}
           avatarUrl={avatarUrl}
-          leftSlot={
+          rightSlot={
             <MobileChatListDrawer>
               <ChatList />
             </MobileChatListDrawer>

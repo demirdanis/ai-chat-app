@@ -60,8 +60,15 @@ export const ProfileMenu = ({
       <DropdownMenuTrigger asChild>
         <button
           type="button"
-          className="inline-flex items-center gap-2 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
           aria-label="Profile Menu"
+          className="
+      inline-flex items-center gap-2 rounded-full
+      focus:outline-none
+      focus:ring-0
+      focus:ring-offset-0
+      active:ring-0
+      shadow-none
+    "
         >
           <Avatar className="h-9 w-9 border border-border">
             <AvatarImage src={avatarUrl ?? undefined} alt={fullName} />

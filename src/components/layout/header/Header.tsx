@@ -7,7 +7,7 @@ export const Header = ({
   email,
   fullName,
   avatarUrl,
-  leftSlot,
+  rightSlot,
 }: HeaderProps) => {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-primary/40 bg-soft/70 backdrop-blur supports-[backdrop-filter]:bg-soft/60">
@@ -22,10 +22,10 @@ export const Header = ({
               className="rounded-full"
             />
           </div>
-          {leftSlot}
         </div>
 
         <div className="flex items-center gap-2">
+          {rightSlot}
           <ProfileMenu
             email={email}
             fullName={fullName}
