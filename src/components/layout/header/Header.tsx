@@ -15,7 +15,7 @@ export const Header = ({
         <div className="flex items-center gap-2">
           <div className="text-sm font-semibold tracking-tight text-primary">
             <Image
-              src="/logo1.png"
+              src="/logo.png"
               alt="Logo"
               width={48}
               height={48}
