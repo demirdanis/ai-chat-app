@@ -61,7 +61,6 @@ const LoginPage = () => {
 
   return (
     <div className="relative min-h-dvh">
-      {/* Sağ üst theme switch */}
       <div className="absolute right-4 top-4 flex items-center gap-2">
         <span className="text-xs text-muted-foreground">
           {isDark ? "Dark" : "Light"}
@@ -72,10 +71,8 @@ const LoginPage = () => {
         />
       </div>
 
-      {/* Kartı biraz yukarı taşı (center ama üstte) */}
       <div className="mx-auto flex min-h-dvh max-w-md items-start px-6 pt-24 sm:pt-28">
         <div className="w-full rounded-2xl border bg-background/80 p-6 shadow-sm backdrop-blur sm:p-8">
-          {/* LOGO + Başlık */}
           <div className="mb-6 flex flex-col items-center gap-3">
             <Image
               src="/logo.png"

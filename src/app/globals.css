@@ -11,7 +11,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  /* Diğer tanımlamalar aynı kalıyor... */
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
@@ -24,22 +23,19 @@
 :root {
   --radius: 0.625rem;
 
-  /* Arkaplan ve Temel Yazı */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.12 0.02 250); /* Çok koyu lacivert-gri */
+  --foreground: oklch(0.12 0.02 250);
 
-  /* PRIMARY: #ec721e (Koyu Turuncu) */
   --primary: oklch(0.65 0.2 45);
   --primary-foreground: oklch(0.98 0 0);
 
-  /* SECONDARY: Uyumlu bir Slate/Füme tonu */
   --secondary: oklch(0.96 0.01 250);
   --secondary-foreground: oklch(0.25 0.02 250);
 
   --muted: oklch(0.96 0.01 250);
   --muted-foreground: oklch(0.45 0.02 250);
 
-  --accent: oklch(0.92 0.04 45 / 15%); /* Turuncunun çok açık bir tonu */
+  --accent: oklch(0.92 0.04 45 / 15%);
   --accent-foreground: oklch(0.65 0.2 45);
 
   --popover: oklch(1 0 0);
@@ -50,24 +46,22 @@
 
   --border: oklch(0.92 0.01 250);
   --input: oklch(0.92 0.01 250);
-  --ring: oklch(0.65 0.2 45 / 40%); /* Turuncu odaklı ring */
+  --ring: oklch(0.65 0.2 45 / 40%);
 
   --destructive: oklch(0.6 0.18 25);
   --destructive-foreground: oklch(0.98 0 0);
 
-  --soft: oklch(0.93 0.05 45); /* #ffe6d7 */
+  --soft: oklch(0.93 0.05 45);
   --soft-foreground: oklch(0.25 0.04 45);
 }
 
 .dark {
-  --background: oklch(0.12 0.02 250); /* Koyu gece mavisi/siyah */
+  --background: oklch(0.12 0.02 250);
   --foreground: oklch(0.98 0 0);
 
-  /* PRIMARY: Karanlık modda biraz daha parlak turuncu */
   --primary: oklch(0.68 0.21 45);
   --primary-foreground: oklch(0.12 0.02 250);
 
-  /* SECONDARY: Karanlık modda daha belirgin füme */
   --secondary: oklch(0.22 0.02 250);
   --secondary-foreground: oklch(0.98 0 0);
 

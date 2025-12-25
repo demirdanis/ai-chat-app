@@ -45,13 +45,9 @@ export const ChatClient = ({ chatId, initialMessages }: ChatClientProps) => {
 
     didInitialAnimatedScrollRef.current = true;
 
-    // 1) İlk açılışta en üstte kalsın
-    // (Zaten default üstte başlar ama garanti olsun)
     window.scrollTo({ top: 0, behavior: "auto" });
 
-    // 2) Sonra bir frame/az gecikme ile smooth aşağı kay
     requestAnimationFrame(() => {
-      // Bazı durumlarda ilk frame yetmeyebilir, o yüzden 2. frame daha stabil
       requestAnimationFrame(() => {
         lastEl.scrollIntoView({
           behavior: "smooth",
