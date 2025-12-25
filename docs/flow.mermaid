@@ -1,0 +1,22 @@
+---
+config:
+  layout: dagre
+---
+flowchart TB
+ subgraph Database["Database"]
+        DBCHATS[("chats")]
+        DBMSG[("messages")]
+        DBCHAR[("characters")]
+  end
+    U["User"] -- Google OAuth --> A["Supabase Auth"]
+    A -- Session --> APP["Next.js App"]
+    APP --> CSEL["Character Selection"]
+    CSEL -- Select Character --> CHATCREATE["Create Chat Session"]
+    CHATCREATE --> DBCHATS
+    DBCHATS --> CHATUI["Chat UI"] & SIDEBAR["Chat History Sidebar"]
+    CHATUI -- User Message --> DBMSG
+    CHATUI -- Send Prompt --> LLM["LLM API"]
+    LLM -- Streaming Response --> CHATUI
+    CHATUI -- Persist AI Message --> DBMSG
+    DBMSG --> CHATUI
+    DBCHAR --> CHATCREATE

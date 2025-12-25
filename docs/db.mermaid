@@ -1,0 +1,34 @@
+erDiagram
+  AUTH_USERS ||--o{ CHATS : has
+  CHARACTERS ||--o{ CHATS : selected_for
+  CHATS ||--o{ MESSAGES : contains
+
+  AUTH_USERS {
+    uuid id PK
+    text email
+    jsonb user_metadata
+  }
+
+  CHARACTERS {
+    uuid id PK
+    text name
+    text avatar_url
+    text system_prompt
+    timestamptz created_at
+  }
+
+  CHATS {
+    uuid id PK
+    uuid user_id FK
+    uuid character_id FK
+    text title
+    timestamptz created_at
+  }
+
+  MESSAGES {
+    uuid id PK
+    uuid chat_id FK
+    text role
+    text content
+    timestamptz created_at
+  }
