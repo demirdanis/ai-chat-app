@@ -1,13 +1,38 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import { signInWithOAuth } from "@/services/auth.client.service";
-import { useState } from "react";
-import { useToast } from "@/components/ui/use-toast";
+import { toast } from "react-toastify";
+import { useSearchParams } from "next/navigation";
 
 const LoginPage = () => {
+  const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
-  const { toast } = useToast();
+
+  useEffect(() => {
+    const reason = searchParams.get("reason");
+
+    if (reason === "unauthorized") {
+      toast.warning(
+        <div>
+          <div>
+            You do not have permission to sign in with this email address.
+          </div>
+
+          <div className="mt-3 text-sm text-muted-foreground">
+            Please contact the application administrator to have your email
+            address added to the allowed email list.
+          </div>
+        </div>,
+        {
+          autoClose: false,
+        }
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   const signInWithGoogle = async () => {
     setLoading(true);
@@ -17,10 +42,15 @@ const LoginPage = () => {
     if (error) {
       console.error(error);
 
-      toast({
-        title: "Sign in failed",
-        description: "We couldn't sign you in with Google. Please try again.",
-      });
+      toast.error(
+        <div>
+          <div>Sign in failed.</div>
+
+          <div className="mt-3 text-sm text-muted-foreground">
+            {`We couldn't sign you in with Google. Please try again.`}
+          </div>
+        </div>
+      );
 
       setLoading(false);
     }

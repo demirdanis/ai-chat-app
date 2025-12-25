@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/provider/ThemeProvider";
-import { Toaster } from "@/components/ui/toaster";
+import ToastProvider from "@/components/provider/ToastProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,7 +50,7 @@ const RootLayout = ({
       >
         <ThemeProvider>
           {children}
-          <Toaster />
+          <ToastProvider />
         </ThemeProvider>
       </body>
     </html>
