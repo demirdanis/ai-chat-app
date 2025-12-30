@@ -56,7 +56,6 @@ export const ChatClient = ({ chatId, initialMessages }: ChatClientProps) => {
         });
       });
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [messages.length]);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
